@@ -96,24 +96,28 @@ var capitals = [
   'Z'
 ];
 
-var choseSymbols = confirm(
-  "Please click OK if you would like your password to have symbols."
-);
-var choseNumbers = confirm(
-  "Please click OK if you would like your password to have numbers."
-);
-var choseLowercase = confirm(
-  "Please click OK if you would like your password to have lowercase letters."
-);
-var choseCapitals = confirm(
-  "Please click OK if you would like your password to have capital letters."
-);
+function choosePasswordOptions() {
+  var choseSymbols = confirm(
+    "Please click OK if you would like your password to have symbols."
+  );
+  var choseNumbers = confirm(
+    "Please click OK if you would like your password to have numbers."
+  );
+  var choseLowercase = confirm(
+    "Please click OK if you would like your password to have lowercase letters."
+  );
+  var choseCapitals = confirm(
+    "Please click OK if you would like your password to have capital letters."
+  );
 
-var chosenOptions = {
-  choseSymbols: choseSymbols,
-  choseNumbers: choseNumbers,
-  choseLowercase: choseLowercase,
-  choseCapitals: choseCapitals,
+  var chosenOptions = {
+    choseSymbols: choseSymbols,
+    choseNumbers: choseNumbers,
+    choseLowercase: choseLowercase,
+    choseCapitals: choseCapitals,
+  };
+
+  return chosenOptions; 
 }
 
 var generateBtn = document.querySelector("#generate");
