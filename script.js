@@ -97,6 +97,9 @@ var capitals = [
 ];
 
 function choosePasswordOptions() {
+  var length = parseInt(prompt(
+    "How many characters would you like your password to be?")
+  );
   var choseSymbols = confirm(
     "Please click OK if you would like your password to have symbols."
   );
@@ -111,6 +114,7 @@ function choosePasswordOptions() {
   );
 
   var chosenOptions = {
+    length: length,
     choseSymbols: choseSymbols,
     choseNumbers: choseNumbers,
     choseLowercase: choseLowercase,
@@ -118,6 +122,53 @@ function choosePasswordOptions() {
   };
 
   return chosenOptions; 
+}
+
+function getRandom(arr) {
+  var random = Math.floor(Math.random() * arr.length);
+  var randomSet = arr[random];
+
+  return randomSet;
+}
+
+function generatePassword() {
+  var options = choosePasswordOptions();
+
+  var password = [];
+
+  var possibleOptions = [];
+
+  var guaranteedOptions = []; 
+
+  if (options.choseSymbols) {
+    possibleOptions = possibleOptions.concat(symbols);
+    guaranteedOptions.push(getRandom(symbols));
+  }
+
+  if (options.choseNumbers) {
+    possibleOptions = possibleOptions.concat(numbers);
+    guaranteedOptions.push(getRandom(numbers));
+  }
+
+  if (options.choseLowercase) {
+    possibleOptions = possibleOptions.concat(lowercase);
+    guaranteedOptions.push(getRandom(lowercase));
+  }
+
+  if (options.choseCapitals) {
+    possibleOptions = possibleOptions.concat(capitals);
+    guaranteedOptions.push(getRandom(capitals));
+  }
+
+  for (var i = 0; i < options.length; i++) {
+    var possibleOptions = getRandom(possibleOptions);
+    password.push(possibleOptions);
+  }
+
+  for (var i = 0; i < guaranteedOptions.length; i++) {
+    password[i] = guaranteedOptions[i];
+  }
+  return password.join('');
 }
 
 var generateBtn = document.querySelector("#generate");
@@ -128,6 +179,8 @@ function writePassword() {
   var passwordText = document.querySelector("#password");
 
   passwordText.value = password;
+  
+  console.log(password)
 
 }
 
