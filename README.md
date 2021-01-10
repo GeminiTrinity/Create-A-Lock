@@ -3,9 +3,7 @@
 
 ## <center> **Table of Contents**
 - [Description](#description)
-- [Installation](#installation-steps)
 - [How To Use](#how-to-use)
-- [Credit](#additional-credit)
 - [License](#license)
 - [My Information](#my-information)
 
@@ -18,33 +16,8 @@ With Create-a-Lock, you can create a randomly generated password that includes n
 
 ---
 
-## Installation Steps:
-*(delete if none)*
-1. 
-2. 
-3. 
-4. 
-5. 
-
----
-
 ## How to Use:
 By clicking the Password Generator button, you'll be given your questions starting with how many characters you want it to be and what sort of things to include in your password.
-
----
-
-## Additional Credit
-**Collaborators:**
-*(delete if none)*
-> 
-
-**Third-Parties:**
-*(delete if none)*
-> 
-
-**Tutorials Used:**
-*(delete if none)*
-> 
 
 ---
 
